@@ -19,5 +19,13 @@
     "网关"
   ],
   "author": "liwh <1010493573@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myliweihao/js-rpc.git"
+  },
+  "homepage": "https://github.com/myliweihao/js-rpc",
+  "bugs": {
+    "url": "https://github.com/myliweihao/js-rpc/issues"
+  }
 }

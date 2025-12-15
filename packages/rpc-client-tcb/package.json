@@ -1,6 +1,6 @@
 {
   "name": "rpc-client-tcb",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An elegant RPC client for miniprogram cloud functions. 为小程序云开发设计的、体验极致的 RPC 小程序调用端。",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,13 @@
     "远程调用"
   ],
   "author": "liwh <1010493573@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myliweihao/js-rpc.git"
+  },
+  "homepage": "https://github.com/myliweihao/js-rpc",
+  "bugs": {
+    "url": "https://github.com/myliweihao/js-rpc/issues"
+  }
 }
