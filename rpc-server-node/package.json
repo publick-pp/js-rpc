@@ -1,0 +1,27 @@
+{
+  "name": "rpc-server-node",
+  "version": "1.0.0",
+  "description": "A zero-dependency, native Node.js RPC server framework. 原生 Node.js RPC 服务端，支持静态托管和 HTTPS。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rpc",
+    "node",
+    "http",
+    "server",
+    "native",
+    "static-server",
+    "cors"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/rpc.git"
+  }
+}
