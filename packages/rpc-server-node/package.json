@@ -1,6 +1,6 @@
 {
   "name": "rpc-server-node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A zero-dependency, native Node.js RPC server framework. 原生 Node.js RPC 服务端，支持静态托管和 HTTPS。",
   "main": "index.js",
   "scripts": {

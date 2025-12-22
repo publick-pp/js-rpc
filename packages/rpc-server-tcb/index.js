@@ -75,6 +75,6 @@ function createRpcServer(options = {}) {
   };
 }
 
-module.exports = {
-  createRpcServer, // 导出更名后的函数
-};
+module.exports = createRpcServer;
+module.exports.create = createRpcServer;
+module.exports.createRpcServer = createRpcServer;

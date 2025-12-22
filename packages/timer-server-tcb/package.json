@@ -1,6 +1,6 @@
 {
   "name": "timer-server-tcb",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Auto-router for WeChat Cloud Base Timer Triggers. 微信云开发定时任务自动路由工具。",
   "main": "index.js",
   "scripts": {

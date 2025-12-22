@@ -9,7 +9,7 @@
  * @param {Function} [options.fetch] - (可选) 自定义的 fetch 实现。如果不传，默认使用全局 fetch。
  * @returns {Proxy} 一个 RPC 客户端代理对象。
  */
-export function createRpcClient(options) {
+function createRpcClient(options) {
   // 修改 1: 校验改为 checking options.url
   if (!options || !options.url) {
     throw new Error('[rpc-client-fetch] `options.url` is required.');
@@ -79,3 +79,12 @@ export function createRpcClient(options) {
     },
   });
 }
+
+// 1. 原有的命名导出 (保持兼容性)
+export { createRpcClient };
+
+// 2. 统一的简写命名导出 (对应服务端 module.exports.create)
+export const create = createRpcClient;
+
+// 3. 默认导出 (对应服务端 module.exports = ...)
+export default createRpcClient;

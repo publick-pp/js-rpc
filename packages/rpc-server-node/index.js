@@ -201,6 +201,6 @@ function createRpcServer(options = {}) {
     return server; // 返回 server 实例，以便用户可以手动 close
 }
 
-module.exports = {
-    createRpcServer,
-};
+module.exports = createRpcServer;
+module.exports.create = createRpcServer;
+module.exports.createRpcServer = createRpcServer;

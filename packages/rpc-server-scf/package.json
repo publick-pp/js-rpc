@@ -1,6 +1,6 @@
 {
   "name": "rpc-server-scf",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "A zero-config RPC server framework for Tencent Cloud Serverless (SCF). 为腾讯云云函数设计的、支持中间件机制的 RPC 服务端框架。",
   "main": "index.js",
   "scripts": {

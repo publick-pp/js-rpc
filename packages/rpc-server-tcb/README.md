@@ -9,12 +9,12 @@
 
 ## ✨ 特性
 
--   🚀 **零配置启动**: 默认情况下，无需任何配置即可工作。
--   📂 **模块化**: 将你的云函数逻辑拆分到不同的文件中，代码更清晰、更易于维护。
--   💡 **上下文注入**: 通过 `this` 轻松访问 `event` 和 `context` 对象，无需污染函数签名。
--   🔥 **热更新**: 在开发过程中，修改 API 模块代码可立即生效，无需重新部署云函数。
--   💪 **健壮的错误处理**: 自动捕获业务逻辑中的错误，并以统一格式返回给客户端。
--   📦 **轻量级**: 无任何外部依赖，代码简洁高效。
+- 🚀 **零配置启动**: 默认情况下，无需任何配置即可工作。
+- 📂 **模块化**: 将你的云函数逻辑拆分到不同的文件中，代码更清晰、更易于维护。
+- 💡 **上下文注入**: 通过 `this` 轻松访问 `event` 和 `context` 对象，无需污染函数签名。
+- 🔥 **热更新**: 在开发过程中，修改 API 模块代码可立即生效，无需重新部署云函数。
+- 💪 **健壮的错误处理**: 自动捕获业务逻辑中的错误，并以统一格式返回给客户端。
+- 📦 **轻量级**: 无任何外部依赖，代码简洁高效。
 
 ## 📦 安装
 
@@ -53,22 +53,22 @@ module.exports = {
     // 这只是一个普通的 JavaScript 函数
     return a + b;
   },
-  
+
   multiply(a, b) {
     return a * b;
-  }
-}
+  },
+};
 ```
 
 #### 3. 编写云函数入口 (`index.js`)
 
-**这就是全部代码！** 引入并调用 `createRpcServer` 即可。
+**这就是全部代码！** 引入并调用 `create` 即可。
 
 ```javascript
-const { createRpcServer } = require('rpc-server-tcb');
+const { create } = require('rpc-server-tcb');
 
 // 无需任何配置，它会自动加载同级 'api' 目录下的所有模块
-exports.main = createRpcServer();
+exports.main = create();
 ```
 
 现在，你可以通过客户端调用 `math` 模块下的 `add` 和 `multiply` 方法了。
@@ -103,13 +103,13 @@ module.exports = {
   getRawEvent() {
     // `this.event` 包含了 rpcModule, rpcAction, rpcParams 等所有字段
     return this.event;
-  }
+  },
 };
 ```
 
 ### 高级配置
 
-`createRpcServer` 接受一个可选的 `options` 对象，用于自定义其行为。
+`create` 接受一个可选的 `options` 对象，用于自定义其行为。
 
 如果你不想使用默认的 `api` 文件夹，可以自定义。
 
@@ -117,21 +117,21 @@ module.exports = {
 
 ```javascript
 // index.js
-const { createRpcServer } = require('rpc-server-tcb');
+const { create } = require('rpc-server-tcb');
 
-exports.main = createRpcServer({
+exports.main = create({
   // 将存放 API 模块的文件夹从 'api' 改为 'services'
-  apiDirName: 'services', 
+  apiDirName: 'services',
 });
 ```
 
 ### API 参考
 
-#### `createRpcServer([options])`
+#### `create([options])`
 
--   `options` `<Object>` (可选) - 配置对象。
-    -   `apiDirName` `<string>` (可选) - 存放 API 模块的文件夹名称。**默认值**: `'api'`。
--   **返回**: `<Function>` - 一个标准的云函数入口函数 `async (event, context) => {}`。
+- `options` `<Object>` (可选) - 配置对象。
+  - `apiDirName` `<string>` (可选) - 存放 API 模块的文件夹名称。**默认值**: `'api'`。
+- **返回**: `<Function>` - 一个标准的云函数入口函数 `async (event, context) => {}`。
 
 ## 🤝 贡献
 
@@ -139,4 +139,4 @@ exports.main = createRpcServer({
 
 ## 📄 开源协议
 
-[MIT](LICENSE)
+[MIT](https://opensource.org/licenses/MIT)

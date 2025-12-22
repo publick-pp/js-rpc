@@ -38,10 +38,10 @@ cloudfunctions/
 ### 2. 编写入口文件 (`index.js`)
 
 ```javascript
-const { createTimerHandler } = require('timer-server-tcb');
+const { create } = require('timer-server-tcb');
 
 // 一行代码启动路由
-exports.main = createTimerHandler();
+exports.main = create();
 ```
 
 ### 3. 编写任务逻辑 (`api/history_job.js`)
@@ -100,4 +100,4 @@ module.exports = async function(event, context) {
 
 ## 📄 开源协议
 
-[MIT](LICENSE)
+[MIT](https://opensource.org/licenses/MIT)

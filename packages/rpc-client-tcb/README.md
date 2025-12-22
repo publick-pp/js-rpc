@@ -9,15 +9,11 @@
 
 ## ✨ 特性
 
--   🪄 **神奇的调用体验**: 以 `rpc.module.action(params)` 的方式调用云函数，完全屏蔽底层细节。
--   
--   🤝 **Promise-based**: 所有调用均返回 Promise，完美支持 `async/await`，代码更优雅。
--   
--   🎯 **参数直传**: 就像调用本地函数一样传递参数，无需手动封装。
--   
--    Eindeutige **统一的错误处理**: 无论是网络错误还是业务错误，都可以通过 `try...catch` 统一捕获。
--   
--   📦 **轻量级**: 无任何外部依赖，代码简洁高效。
+- 🪄 **神奇的调用体验**: 以 `rpc.module.action(params)` 的方式调用云函数，完全屏蔽底层细节。
+- 🤝 **Promise-based**: 所有调用均返回 Promise，完美支持 `async/await`，代码更优雅。
+- 🎯 **参数直传**: 就像调用本地函数一样传递参数，无需手动封装。
+- Eindeutige **统一的错误处理**: 无论是网络错误还是业务错误，都可以通过 `try...catch` 统一捕获。
+- 📦 **轻量级**: 无任何外部依赖，代码简洁高效。
 
 ## 📦 安装
 
@@ -38,11 +34,11 @@ npm install rpc-client-tcb
 **`utils/rpc.js`**
 
 ```javascript
-import { createRpcClient } from 'rpc-client-tcb';
+import { create } from 'rpc-client-tcb';
 
-const rpc = createRpcClient({
+const rpc = create({
   // 这里的名字必须和你部署的云函数名完全一致
-  functionName: 'rpcEntry', 
+  functionName: 'rpcEntry',
 });
 
 export default rpc;
@@ -81,14 +77,16 @@ Page({
 假设你的服务端有 `api/user.js` 和 `api/math.js` 两个模块。
 
 **服务端 `api/math.js`**
+
 ```javascript
 module.exports = {
   add: (a, b) => a + b,
   multiply: (a, b) => a * b,
-}
+};
 ```
 
 **小程序端调用**
+
 ```javascript
 // 调用 add 方法
 const sum = await rpc.math.add(5, 8); // sum will be 13
@@ -100,17 +98,19 @@ const product = await rpc.math.multiply(3, 4); // product will be 12
 ---
 
 **服务端 `api/user.js`**
+
 ```javascript
 module.exports = {
   getMyOpenId() {
     const { OPENID } = this.context.userInfo;
     if (!OPENID) throw new Error('OpenID not found.');
     return OPENID;
-  }
-}
+  },
+};
 ```
 
 **小程序端调用**
+
 ```javascript
 // 调用 getMyOpenId 方法，无需传参
 try {
@@ -126,8 +126,8 @@ try {
 
 `rpc-client-tcb` 的一大优势是统一了错误处理模型。
 
--   **网络问题** 或 **云函数不存在** 等调用层面的失败。
--   **服务端业务逻辑** `throw new Error()` 抛出的业务错误。
+- **网络问题** 或 **云函数不存在** 等调用层面的失败。
+- **服务端业务逻辑** `throw new Error()` 抛出的业务错误。
 
 所有这些错误都可以通过 `try...catch` 捕获，让你能像处理本地代码异常一样处理远程调用失败。
 
@@ -148,11 +148,11 @@ async function getUserData() {
 
 ### API 参考
 
-#### `createRpcClient(options)`
+#### `create(options)`
 
--   `options` `<Object>` (必选) - 配置对象。
-    -   `functionName` `<string>` (必选) - 你部署的云函数统一入口名称。
--   **返回**: `<Proxy>` - 一个 RPC 客户端代理对象。
+- `options` `<Object>` (必选) - 配置对象。
+  - `functionName` `<string>` (必选) - 你部署的云函数统一入口名称。
+- **返回**: `<Proxy>` - 一个 RPC 客户端代理对象。
 
 ## 🤝 贡献
 
@@ -160,4 +160,4 @@ async function getUserData() {
 
 ## 📄 开源协议
 
-[MIT](LICENSE)
+[MIT](https://opensource.org/licenses/MIT)

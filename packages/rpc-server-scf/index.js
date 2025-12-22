@@ -113,6 +113,6 @@ function createRpcServer(options = {}) {
   };
 }
 
-module.exports = {
-  createRpcServer,
-};
+module.exports = createRpcServer;
+module.exports.create = createRpcServer;
+module.exports.createRpcServer = createRpcServer;

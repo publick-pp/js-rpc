@@ -1,6 +1,6 @@
 {
   "name": "rpc-server-tcb",
-  "version": "1.0.2",
+  "version": "1.1.1",
   "description": "A zero-config RPC server framework for miniprogram cloud functions",
   "main": "index.js",
   "scripts": {

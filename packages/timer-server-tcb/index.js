@@ -74,6 +74,6 @@ function createTimerHandler(options = {}) {
   };
 }
 
-module.exports = {
-  createTimerHandler,
-};
+module.exports = createTimerHandler;
+module.exports.create = createTimerHandler;
+module.exports.createTimerHandler = createTimerHandler;

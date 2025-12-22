@@ -1,7 +1,7 @@
 {
-  "name": "rpc-client-fetch",
-  "version": "1.1.0",
-  "description": "A universal, zero-dependency RPC client based on Fetch API. 基于 Fetch API 的通用 RPC 客户端，适用于 Web、Node.js 和 React Native。",
+  "name": "rpc-client-request",
+  "version": "1.0.0",
+  "description": "An RPC client specifically designed for UniApp and WeChat Mini Programs. 专为 UniApp 和微信小程序设计的 RPC 客户端，自动适配 wx.request/uni.request。",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -10,14 +10,15 @@
   "keywords": [
     "rpc",
     "client",
-    "fetch",
-    "http",
-    "browser",
-    "node",
-    "react-native",
+    "request",
+    "uniapp",
+    "wechat",
+    "wx",
+    "miniprogram",
+    "小程序",
+    "微信小程序",
     "scf",
-    "serverless",
-    "web"
+    "serverless"
   ],
   "author": "liwh <1010493573@qq.com>",
   "license": "MIT",
